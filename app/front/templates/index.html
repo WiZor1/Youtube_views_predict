@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Project Oracle</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__description">
+                    <p class="header__text">
+                        Не знаешь, как назвать видео? Хочешь, чтобы <br> оно было популярным?
+                    </p>
+                    <h1 class="header__title">Мы поможем тебе определиться!</h1>
+                </div>
+                <div class="header__content">
+                    <form class="header__form" action="{{ url_for('predict_form') }}" method="POST">
+                        {{ form.hidden_tag() }}
+                        <div class="header__form-all">
+                            <div class="header__form-content">
+                                <label class="header__form-label">
+                                    Как ты хочешь назвать видео?
+                                    <input class="header__form-input" type="text" id="title" name="title" required>
+                                </label>
+                            </div>
+                            <div class="header__form-moreinfo__content">
+                                <p class="header__form-moreinfo">
+                                    Дополнительно
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    <span>рекомендуется заполнить</span>
+                                </p>
+                                <div class="header__form-moreinfo__content-box">
+                                    <label class="moreinfo__label">
+                                        Как называется канал?
+                                        <input class="moreinfo__input" type="text" id="channel_title" name="channel_title">
+                                    </label>
+                                    <label class="moreinfo__label">
+                                        Какое описание видео?
+                                        <input class="moreinfo__input" type="text" id="tags" name="tags">
+                                    </label>
+                                    <label class="moreinfo__label">
+                                        К каким тегам относится видео?
+                                        <input class="moreinfo__input" type="text" id="description" name="description">
+                                    </label>
+                                    <label class="moreinfo__label moreinfo__label-checkbox">
+                                        Отключить комментарии
+                                        <input class="moreinfo__input moreinfo__input-checkbox" type="checkbox" id="comments_disabled" name="comments_disabled">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="header__form-bottomcontent">
+                                <label class="header__form-bottomcontent__label">
+                                    <div class="toltip__box">Среднее количество просмотров:
+                                        <div class="tooltip">
+                                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                            <p class="tooltip-text">
+                                                Среднее количество просмотров, которое бывает на твоём канале. Если же ты
+                                                ещё только
+                                                начинаешь свой путь или не знаешь это число, оставь поле пустым, мы
+                                                посчитаем сами.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <input class="header__form-bottomcontent__input" type="text"
+                                        placeholder="50 000, если поле пустое" id="views" name="views">
+                                </label>
+                                <button class="header__form-btn" type="submit">анализировать</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <script src="https://use.fontawesome.com/a3b08b5393.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

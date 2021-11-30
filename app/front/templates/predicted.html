@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Project Oracle</title>
+</head>
+
+<body>
+    <section class="predicted">
+        <div class="container">
+            <div class="predicted__inner">
+                <h1 class="predicted__title">Результат</h1>
+                <div class="predicted__content-box">
+                    <ul class="predicted__list">
+                        <li class="predicted__item-title">Количество просмотров:</li>
+                        <li class="predicted__item">{{ response['pred_views_abs'] }}</li>
+                        <li class="predicted__item">{{ response['pred_views'] }} %</li>
+                    </ul>
+                    <ul class="predicted__list">
+                        <li class="predicted__item-title">Количество лайков:</li>
+                        <li class="predicted__item">{{ response['pred_likes_abs'] }}</li>
+                        <li class="predicted__item">{{ response['pred_likes'] }} %</li>
+                    </ul>
+                    <ul class="predicted__list">
+                        <li class="predicted__item-title">Количество дислайков:</li>
+                        <li class="predicted__item">{{ response['pred_dislikes_abs'] }}</li>
+                        <li class="predicted__item">{{ response['pred_dislikes'] }} %</li>
+                    </ul>
+                </div>
+                <div class="predicted__conclusion-box">
+                    <p class="predicted__conclusion">{{ response['comm'] }}</p>
+                </div>
+                <a class="predicted__link" href="/">Назад</a>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://use.fontawesome.com/a3b08b5393.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
