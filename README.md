@@ -19,14 +19,14 @@
 Для копирования готового образа можно воспользоваться:
 `docker pull wizor1/youtube_preds`
 
-Соответственно, образ находится [здесь](#https://hub.docker.com/repository/docker/wizor1/youtube_preds).
+Соответственно, образ находится <a href="https://hub.docker.com/repository/docker/wizor1/youtube_preds">здесь</a>.
 
 -------------
 ## Модель
 
 Для подготовки модели использовался датасет из открытого
-источника на [Kaggle](#https://www.kaggle.com/datasnaek/youtube-new).
-
+источника на 
+<a href="https://www.kaggle.com/datasnaek/youtube-new">Kaggle</a>.
 Предварительно подготовлена предобученная модель `model.dill` на основе
 `TfIdf` векторизации токенов и последующим обучением на основе
 `Ridge` регрессии. Модель можно заменять на другую, удовлетворяющей требованиям:
@@ -57,6 +57,5 @@ Backend:
 * `docker`
 
 Frontend:
-* [NetGeoOWild](#https://github.com/NetGeoOWild/Project-Oracle)
-
+* <a href="https://github.com/NetGeoOWild/Project-Oracle">NetGeoOWild</a>
 -----
